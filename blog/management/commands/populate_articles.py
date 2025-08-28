@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from blog.models import Article
 import random
 import requests
+from faker import Faker
 
 
 class Command(BaseCommand):
@@ -15,5 +16,12 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         count = kwargs['count']
 
-        data = requests.get('https://jsonplaceholder.typicode.com/posts')
-        print(data)
+        fake = Faker()
+        for _ in range(count):
+            Article.objects.create(
+                title=fake.sentence(),
+                content=fake.text(),
+                author=fake.name(),
+                is_published=random.choice([True, False])
+            )
+        self.stdout.write(self.style.SUCCESS(f'Created {count} articles.'))
