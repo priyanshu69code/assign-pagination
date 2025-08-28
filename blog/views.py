@@ -8,15 +8,11 @@ from .models import Article
 # Create your views here.
 
 
-class ArticlePageNumberPagination(PageNumberPagination):
-    page_size = 10
-    page_size_query_param = 'page_size'
-    max_page_size = 100
 
 
 class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleSerializer
-    pagination_class = ArticlePageNumberPagination
+    pagination_class = PageNumberPagination
 
     def get_queryset(self):
         return Article.objects.filter(is_published=True).order_by('-created_at')
