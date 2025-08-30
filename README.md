@@ -42,7 +42,7 @@ This project provides a RESTful API for managing articles with two different pag
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:priyanshu69code/assign-pagination.git
    cd assign-pagination
    ```
 
@@ -54,7 +54,7 @@ This project provides a RESTful API for managing articles with two different pag
 
 3. **Install dependencies**
    ```bash
-   pip install django djangorestframework
+   pip install -r requirements.txt
    ```
 
 4. **Run migrations**

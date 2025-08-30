@@ -1,0 +1,13 @@
+asgiref==3.9.1
+certifi==2025.8.3
+charset-normalizer==3.4.3
+Django==5.2.5
+django-filter==25.1
+djangorestframework==3.16.1
+Faker==37.6.0
+idna==3.10
+Markdown==3.8.2
+requests==2.32.5
+sqlparse==0.5.3
+tzdata==2025.2
+urllib3==2.5.0
